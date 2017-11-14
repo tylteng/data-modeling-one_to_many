@@ -5,7 +5,7 @@ Customer                             Order
 |                    |             |                     |
 |Name                |             |Order Number         |
 |Email               |             |Customer ID          |
-|Mailing Address     |             |ID                   |
+|Mailing Address     |1           M|ID                   |
 |ID                  +------------>+                     |
 |                    |             |                     |
 |                    |             |                     |
@@ -18,18 +18,18 @@ Question 2
 Person                          Residence                        City
 +--------------------+         +---------------------+        +--------------------+
 |                    |         |ID                   |        |ID                  |
-|Name                |         |Address              |        |Name                |
+|Name                |M       1|Address              |M      1|Name                |
 |Age                 +------>  |Year Built           +------> |Year Founded        |
 |Residence id        |         |City ID              |        |Province ID         |
 |                    |         |                     |        |                    |
 +--------------------+         +---------------------+        +-----------+--------+
-                                                                    |
+                                                                    |     M
                                                                     |
                                                                     v
-                                 Country                        Pro^ince
+                                 Country                        Province  1
                         +----------------------+        +--------------------+
                         |ID                    |        |ID                  |
-                        |Name                  |        |Name                |
+                        |Name                  |1      M|Name                |
                         |Year Founded          | <------+Year Founded        |
                         |National Animal       |        |Country ID          |
                         |                      |        |                    |
@@ -37,3 +37,66 @@ Person                          Residence                        City
 
 
 Question 3
+
+Author
++----------------------------+
+|                            |
+|ID                          |
+|Name                        |
+|                            |
+|                            |
+|                            |
+|                            |
+|                            |
++-----------+----------------+
+ |1
+ |
+ |
+ |
+ |
+ |
+ |
+ |
+ |                          Book                                                  Hold
+ |              +-----------------------------+                        +--------------------------+
+ |              |                             |                        |                          |
+ |              |ID                           |                        |ID                        |
+ |              |title                        |1                      M|Date Placed               |
+ |             M|isbn                         | +--------------------> |Book ID                   |
+ +------------> |Author ID                    |                        |Patron ID                 |
+                |                             |                        |                          |
+                |                             |                        |                          |
+                |                             |                        |                          |
+                +-------------+---------------+                        +----------------+---------+
+                              |1                                                       M|
+                              |                                                         |
+                              |                                                         |
+                              |                                                         |
+                              |                                                         |
+                              |                                                         |
+                              |                                                         |
+                              |                                                         |
+                              |                                                         |
+                              |                                                         |                         Patron
+                              |                                                         |          +---------------------------------+
+                              |                                                         |          |                                 |
+                              |                                                         |          |ID                               |
+                              |                                                         |          |Name                             |
+                              |                                                         |         1|Card Number                      |
+                              |                                                         +--------> |Email                            |
+                              |                                                                    |                                 |
+                              |                                                                    |                                 |
+                              |                                                                    |                                 |
+                              |M                          
+                                   Loan                                                            +----------------+----------------+
+                         +-----------------------------+                                                           1|
+                         |                             |                                                            |
+                         |ID                           |                                                            |
+                         |Due Date                     |                                                            |
+                         |Renewed?                     |                                                            |
+                         |Book ID                      |M                                                           |
+                         |Patron ID                    | <----------------------------------------------------------+
+                         |                             |
+                         |                             |
+                         |                             |
+                         +-----------------------------+
