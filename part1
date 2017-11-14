@@ -1,0 +1,39 @@
+Question 1
+
+Customer                             Order
++--------------------+             +---------------------+
+|                    |             |                     |
+|Name                |             |Order Number         |
+|Email               |             |Customer ID          |
+|Mailing Address     |             |ID                   |
+|ID                  +------------>+                     |
+|                    |             |                     |
+|                    |             |                     |
+|                    |             |                     |
+|                    |             |                     |
++--------------------+             +---------------------+
+
+Question 2
+
+Person                          Residence                        City
++--------------------+         +---------------------+        +--------------------+
+|                    |         |ID                   |        |ID                  |
+|Name                |         |Address              |        |Name                |
+|Age                 +------>  |Year Built           +------> |Year Founded        |
+|Residence id        |         |City ID              |        |Province ID         |
+|                    |         |                     |        |                    |
++--------------------+         +---------------------+        +-----------+--------+
+                                                                    |
+                                                                    |
+                                                                    v
+                                 Country                        Pro^ince
+                        +----------------------+        +--------------------+
+                        |ID                    |        |ID                  |
+                        |Name                  |        |Name                |
+                        |Year Founded          | <------+Year Founded        |
+                        |National Animal       |        |Country ID          |
+                        |                      |        |                    |
+                        +----------------------+        +--------------------+
+
+
+Question 3
